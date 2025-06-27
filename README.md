@@ -15,10 +15,11 @@
 
 
 ## News
-- 
+
+- 🎉🎉 **2025.6.21**: We are thrilled to announce that our paper [Limit-of-RLVR](https://arxiv.org/abs/2504.13837) has garnered over 120 citations on [Semantic Scholar](https://www.semanticscholar.org/paper/Does-Reinforcement-Learning-Really-Incentivize-in-Yue-Chen/143e18bfd7c356592e7c1439738a3525d3e16279) just two months after its release on 2025.4.21! 🎉🎉
+- **2025.6.20**: Released evaluation code for DeepCoder.
 - **2025.5.17**: Updated the paper on [arXiv](https://arxiv.org/abs/2504.13837) with new experiments involving DAPO and DeepScaler. Added detailed analysis on entropy, KL divergence, and the impact of rollout numbers.
 - **2025.5.24**: Released evaluation code for Math and updated the README to reflect these changes.
-- **2025.6.27**: Released evaluation code for DeepCoder.
 
 
 
@@ -80,6 +81,10 @@ vLLM automatically manages randomness by progressing the random state sequential
 ### Math
 
 Enter `math` and read `README`.
+
+### Code
+
+Enter `code` and read `README`.
 
 
 ## Acknowledgements
