@@ -15,9 +15,10 @@
 
 
 ## News
-
+- 
 - **2025.5.17**: Updated the paper on [arXiv](https://arxiv.org/abs/2504.13837) with new experiments involving DAPO and DeepScaler. Added detailed analysis on entropy, KL divergence, and the impact of rollout numbers.
 - **2025.5.24**: Released evaluation code for Math and updated the README to reflect these changes.
+- **2025.6.27**: Released evaluation code for DeepCoder.
 
 
 
