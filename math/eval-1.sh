@@ -1,0 +1,13 @@
+bash eval_math_nodes.sh \
+    --run_name Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf \
+    --init_model ./models/Qwen2.5-7B-hf \
+    --template qwen-boxed  \
+    --tp_size 2 \
+    --add_step_0 true  \
+    --temperature 0.6 \
+    --top_p 0.95 \
+    --max_tokens 16000 \
+    --benchmarks minerva_math \
+    --n_sampling 32 \
+    --just_wandb false \
+    --seed 1

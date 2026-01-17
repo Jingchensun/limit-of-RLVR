@@ -1,3 +1,35 @@
+Metadata-Version: 2.4
+Name: verl
+Version: 0.0.0
+Home-page: https://github.com/volcengine/verl
+License: Apache 2.0
+Description-Content-Type: text/markdown
+Requires-Dist: accelerate
+Requires-Dist: codetiming
+Requires-Dist: datasets
+Requires-Dist: dill
+Requires-Dist: hydra-core==1.4.0.dev1
+Requires-Dist: omegaconf==2.4.0.dev3
+Requires-Dist: numpy
+Requires-Dist: pybind11
+Requires-Dist: ray[default]==2.10.0
+Requires-Dist: tensordict
+Requires-Dist: transformers<4.48
+Requires-Dist: vllm<=0.6.3
+Requires-Dist: peft
+Requires-Dist: liger-kernel
+Requires-Dist: word2number
+Requires-Dist: math-verify[antlr4_11_0]==0.6.0
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: yapf; extra == "test"
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+
 ## Quick Start
 
 ### Installation

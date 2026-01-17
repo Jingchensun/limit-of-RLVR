@@ -129,6 +129,23 @@ def setup(args):
         data_list = need_eval_data_list
     
     if args.use_vllm:
+        # vLLM 默认可能会选用 bfloat16，但如 GTX 1080 Ti (cc 6.1) 不支持 bf16，会直接报错。
+        # 这里按 GPU 计算能力自动选择 dtype（也可通过环境变量 VLLM_DTYPE 强制覆盖为 "half"/"bfloat16" 等）。
+        vllm_dtype = os.environ.get("VLLM_DTYPE")
+        if not vllm_dtype:
+            try:
+                major, minor = torch.cuda.get_device_capability(0)
+                vllm_dtype = "bfloat16" if major >= 8 else "half"
+            except Exception:
+                vllm_dtype = "half"
+
+        # 多卡张量并行 + 老驱动/老卡在 CUDA graph capture 时容易触发 NCCL invalid usage；
+        # 默认对 tp>1 关闭 graph capture（enforce_eager=True），也可用环境变量 VLLM_ENFORCE_EAGER 覆盖。
+        vllm_enforce_eager_env = os.environ.get("VLLM_ENFORCE_EAGER")
+        if vllm_enforce_eager_env is None:
+            vllm_enforce_eager = (len(available_gpus) > 1)
+        else:
+            vllm_enforce_eager = vllm_enforce_eager_env.strip().lower() in ("1", "true", "yes", "y")
         llm = LLM(
             model=args.model_name_or_path,
             tensor_parallel_size=len(available_gpus) // args.pipeline_parallel_size,
@@ -137,6 +154,8 @@ def setup(args):
             seed=args.seed,
             gpu_memory_utilization=0.9,
             max_model_len=4096,
+            dtype=vllm_dtype,
+            enforce_eager=vllm_enforce_eager,
         )
         tokenizer = None
         if args.apply_chat_template:

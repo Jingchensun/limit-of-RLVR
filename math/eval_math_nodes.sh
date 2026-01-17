@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 记录启动脚本时所在目录，用于解析相对路径（例如 --init_model ./models/xxx）
+ROOT_DIR="$(pwd)"
+
 cd examples/math_eval
 pip uninstall latex2sympy2 -y
 cd latex2sympy
@@ -111,7 +114,18 @@ base_checkpoint_path="EVAL/checkpoints/${RUN_NAME}"
 
 remove_dir=$base_checkpoint_path/global_step_0/
 
-init_model_path="" # YOU NEED TO CHANGE IT
+init_model_path="$INIT_MODEL_PATH"  # 使用从参数传入的模型路径
+
+# 如果传入的是相对路径（如 ./models/xxx 或 models/xxx），将其解析为以 ROOT_DIR 为基准的绝对路径
+if [[ "$init_model_path" != /* ]]; then
+    init_model_path="$ROOT_DIR/$init_model_path"
+fi
+
+# 验证模型路径是否存在（如果是本地路径）
+if [ -n "$init_model_path" ] && [[ "$init_model_path" == /* ]] && [ ! -d "$init_model_path" ]; then
+    echo "Warning: Local model path '$init_model_path' does not exist."
+    echo "If this is a HuggingFace model name, it will be downloaded automatically."
+fi
 
 chmod +x sh/convert_and_evaluate_gpu_nodes.sh
 
