@@ -1,0 +1,142 @@
+Found existing installation: latex2sympy2 1.9.0
+Uninstalling latex2sympy2-1.9.0:
+  Successfully uninstalled latex2sympy2-1.9.0
+Obtaining file:///home/jsun/limit-of-RLVR/math/examples/math_eval/latex2sympy
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: sympy>=1.4 in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (from latex2sympy2==1.9.0) (1.12)
+Requirement already satisfied: antlr4-python3-runtime==4.11.1 in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (from latex2sympy2==1.9.0) (4.11.1)
+Requirement already satisfied: mpmath>=0.19 in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (from sympy>=1.4->latex2sympy2==1.9.0) (1.3.0)
+Building wheels for collected packages: latex2sympy2
+  Building editable for latex2sympy2 (pyproject.toml): started
+  Building editable for latex2sympy2 (pyproject.toml): finished with status 'done'
+  Created wheel for latex2sympy2: filename=latex2sympy2-1.9.0-0.editable-py3-none-any.whl size=3188 sha256=858590e91081fdad84c0f7e6411bcd5b7af38f0e562557827db49e06fb34c33e
+  Stored in directory: /tmp/pip-ephem-wheel-cache-tqbgcif9/wheels/4b/8a/a4/42c476ae708366a03cba8f1a1c99b3ff8f27de92d626d1ccea
+Successfully built latex2sympy2
+Installing collected packages: latex2sympy2
+  Attempting uninstall: latex2sympy2
+    Found existing installation: latex2sympy2 1.9.0
+    Can't uninstall 'latex2sympy2'. No files were found to uninstall.
+Successfully installed latex2sympy2-1.9.0
+Requirement already satisfied: Pebble in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (5.1.3)
+Requirement already satisfied: sympy==1.12 in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (1.12)
+Requirement already satisfied: mpmath>=0.19 in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (from sympy==1.12) (1.3.0)
+Requirement already satisfied: antlr4-python3-runtime==4.11.1 in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (4.11.1)
+Requirement already satisfied: timeout-decorator in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (0.5.0)
+Requirement already satisfied: jieba in /home/jsun/miniconda3/envs/verl/lib/python3.10/site-packages (0.42.1)
+Copied initial model to EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/global_step_0/actor/huggingface/
+Total checkpoints: 1
+Running on node 0 of 1 nodes
+This node will evaluate 1 checkpoints:
+global_step_0
+Evaluating checkpoints on node 0
+Random seed set as 1
+INFO 01-16 23:46:24 config.py:887] Defaulting to use mp for distributed inference
+WARNING 01-16 23:46:24 config.py:380] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+INFO 01-16 23:46:24 llm_engine.py:237] Initializing an LLM engine (vdev) with config: model='EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/global_step_0/actor/huggingface', speculative_config=None, tokenizer='EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/global_step_0/actor/huggingface', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=1, served_model_name=EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/global_step_0/actor/huggingface, use_v2_block_manager=True, num_scheduler_steps=1, chunked_prefill_enabled=False multi_step_stream_outputs=True, enable_prefix_caching=False, use_async_output_proc=False, use_cached_outputs=False, mm_processor_kwargs=None)
+WARNING 01-16 23:46:24 multiproc_gpu_executor.py:127] CUDA was previously initialized. We must use the `spawn` multiprocessing start method. Setting VLLM_WORKER_MULTIPROC_METHOD to 'spawn'.
+WARNING 01-16 23:46:24 multiproc_gpu_executor.py:53] Reducing Torch parallelism from 16 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 01-16 23:46:24 custom_cache_manager.py:17] Setting Triton cache manager to: vllm.triton_utils.custom_cache_manager:CustomCacheManager
+[1;36m(VllmWorkerProcess pid=893921)[0;0m INFO 01-16 23:46:29 multiproc_worker_utils.py:216] Worker ready; awaiting tasks
+INFO 01-16 23:46:29 utils.py:1008] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=893921)[0;0m INFO 01-16 23:46:29 utils.py:1008] Found nccl from library libnccl.so.2
+INFO 01-16 23:46:29 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=893921)[0;0m INFO 01-16 23:46:29 pynccl.py:63] vLLM is using nccl==2.20.5
+NCCL version 2.20.5+cuda11.0
+[1;36m(VllmWorkerProcess pid=893921)[0;0m INFO 01-16 23:46:29 custom_all_reduce_utils.py:242] reading GPU P2P access cache from /home/jsun/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+INFO 01-16 23:46:29 custom_all_reduce_utils.py:242] reading GPU P2P access cache from /home/jsun/.cache/vllm/gpu_p2p_access_cache_for_0,1.json
+[1;36m(VllmWorkerProcess pid=893921)[0;0m WARNING 01-16 23:46:29 custom_all_reduce.py:141] Custom allreduce is disabled because your platform lacks GPU P2P capability or P2P test failed. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+WARNING 01-16 23:46:29 custom_all_reduce.py:141] Custom allreduce is disabled because your platform lacks GPU P2P capability or P2P test failed. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+INFO 01-16 23:46:29 shm_broadcast.py:241] vLLM message queue communication handle: Handle(connect_ip='127.0.0.1', local_reader_ranks=[1], buffer=<vllm.distributed.device_communicators.shm_broadcast.ShmRingBuffer object at 0x7f15046dae90>, local_subscribe_port=52495, remote_subscribe_port=None)
+INFO 01-16 23:46:29 model_runner.py:1060] Starting to load model EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/global_step_0/actor/huggingface...
+[1;36m(VllmWorkerProcess pid=893921)[0;0m INFO 01-16 23:46:29 model_runner.py:1060] Starting to load model EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/global_step_0/actor/huggingface...
+INFO 01-16 23:46:32 model_runner.py:1071] Loading model weights took 7.1441 GB
+[1;36m(VllmWorkerProcess pid=893921)[0;0m INFO 01-16 23:46:32 model_runner.py:1071] Loading model weights took 7.1441 GB
+INFO 01-16 23:46:33 distributed_gpu_executor.py:57] # GPU blocks: 78177, # CPU blocks: 9362
+INFO 01-16 23:46:33 distributed_gpu_executor.py:61] Maximum concurrency for 4096 tokens per request: 305.38x
+==================================================
+data: minerva_math  ,remain samples: 272
+{'problem': 'Each of the two Magellan telescopes has a diameter of $6.5 \\mathrm{~m}$. In one configuration the effective focal length is $72 \\mathrm{~m}$. Find the diameter of the image of a planet (in $\\mathrm{cm}$ ) at this focus if the angular diameter of the planet at the time of the observation is $45^{\\prime \\prime}$.', 'solution': 'Start with:\n\\[\ns=\\alpha f \\text {, }\n\\]\nwhere $s$ is the diameter of the image, $f$ the focal length, and $\\alpha$ the angular diameter of the planet. For the values given in the problem:\n\\[\ns=\\frac{45}{3600} \\frac{\\pi}{180} 7200=\\boxed{1.6} \\mathrm{~cm}\n\\]', 'type': 'Introduction to Astronomy (8.282J Spring 2006)', 'idx': 0}
+<|im_start|>system
+You are a helpful assistant.<|im_end|>
+<|im_start|>user
+Each of the two Magellan telescopes has a diameter of $6.5 \mathrm{~m}$. In one configuration the effective focal length is $72 \mathrm{~m}$. Find the diameter of the image of a planet (in $\mathrm{cm}$ ) at this focus if the angular diameter of the planet at the time of the observation is $45^{\prime \prime}$.
+Please reason step by step, and put your final answer within \boxed{}.<|im_end|>
+<|im_start|>assistant
+
+-------------------- Epoch 0
+-------------------- Epoch 1
+Unsolved samples: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{'num_samples': 272, 'num_scores': 8704, 'timeout_samples': 39, 'empty_samples': 27, 'acc': 22.6, 'pass_acc': 55.9, 'pass@k': {1: 22.6, 2: 31.7, 4: 40.5, 8: 47.5, 16: 52.5, 32: 55.9}, 'type_acc': {'Differential Equations (18.03 Spring 2010)': 45.8, 'Dynamics and Control (2.003 Spring 2005)': 26.9, 'Ecology I (1.018J Fall 2009)': 20.0, 'Information and Entropy (6.050J Spring 2008)': 33.3, 'Introduction to Astronomy (8.282J Spring 2006)': 15.1, 'Introduction to Solid State Chemistry (3.091 Fall 2010)': 9.3, 'Physical Chemistry (5.61 Fall 2017)': 0.0, 'Principles of Microeconomics (14.01 Fall 2011)': 27.8, 'Relativity (8.033 Fall 2006)': 18.2}}
+Saved to EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/eval_results/global_step_0/minerva_math/test_qwen-boxed_-1_seed1_t0.6_s0_e-1.jsonl
+minerva_math	avg         
+22.6        	22.6        
+Evaluating 1/1 checkpoints ...
+All conversions and evaluations completed.
+model_name: /home/jsun/limit-of-RLVR/math/./models/Qwen2.5-7B-hf
+Collecting results...
+metrics_files ====  ['EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/eval_results/global_step_0/minerva_math/test_qwen-boxed_-1_seed1_t0.6_s0_e-1_metrics.json']
+process_args ====  [('EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/eval_results/global_step_0/minerva_math/test_qwen-boxed_-1_seed1_t0.6_s0_e-1_metrics.json', '/home/jsun/limit-of-RLVR/math/./models/Qwen2.5-7B-hf')]
+
+Creating summary...
+results ==== 
+('eval_results-global_step_0', defaultdict(<class 'dict'>, {'minerva_math': {'acc': 22.6, 'pass_acc': 55.9, 'tokens': 586.0110294117648, 'keywords': 0.04411764705882353, 'correct_tokens': 496.0892857142857, 'wrong_tokens': 609.324074074074, 'clip_ratio': 0.01838235294117647, 'avg_stop_tokens': 524.8501872659176, 'stop_ratio': 0.9816176470588235, 'box_ratio': 0.8933823529411765, 'repeat_ratio': 0.44485294117647056}}))
+model ====  eval_results-global_step_0
+rows ====  [{'model': 'eval_results-global_step_0', 'minerva_math_acc': 22.6, 'minerva_math_pass_acc': 55.9, 'minerva_math_tokens': 586.0110294117648, 'minerva_math_keywords': 0.04411764705882353, 'minerva_math_correct_tokens': 496.0892857142857, 'minerva_math_wrong_tokens': 609.324074074074, 'minerva_math_clip_ratio': 0.01838235294117647, 'minerva_math_stop_tokens': 524.8501872659176, 'minerva_math_stop_ratio': 0.9816176470588235, 'minerva_math_box_ratio': 0.8933823529411765, 'minerva_math_repeat_ratio': 0.44485294117647056, 'avg_acc': 22.6, 'avg_pass_acc': 55.9, 'avg_tokens': 586.0110294117648, 'avg_keywords': 0.04411764705882353, 'avg_correct_tokens': 496.0892857142857, 'avg_wrong_tokens': 609.324074074074, 'avg_clip_ratio': 0.01838235294117647, 'avg_stop_tokens': 524.8501872659176, 'avg_stop_ratio': 0.9816176470588235, 'avg_box_ratio': 0.8933823529411765, 'avg_repeat_ratio': 0.44485294117647056}]
+df ====                          model  ...  avg_repeat_ratio
+0  eval_results-global_step_0  ...          0.444853
+
+[1 rows x 23 columns]
+
+Results summary:
+                        model  ...  avg_repeat_ratio
+0  eval_results-global_step_0  ...          0.444853
+
+[1 rows x 23 columns]
+
+Results saved to EVAL/checkpoints/Qwen2.5-7B_minerva_math_temp0.6_n32_seed1_hf/eval_results/eval_results.csv
